@@ -24,10 +24,11 @@ local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 
 -- Get references (Rojo structure)
-local ServerFolder = script.Parent.Parent
+-- script = HamonService, script.Parent = Manifestations, script.Parent.Parent = JoJoFramework (main script)
+local JoJoFramework = script.Parent.Parent
 local SharedFolder = ReplicatedStorage:WaitForChild("JoJoFramework"):WaitForChild("Shared")
 
-local CombatService = require(ServerFolder.Combat.CombatService)
+local CombatService = require(JoJoFramework.Combat.CombatService)
 local ManifestationConfig = require(SharedFolder.Constants.ManifestationConfig)
 
 local HamonService = {}

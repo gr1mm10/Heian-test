@@ -22,10 +22,11 @@ local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 
 -- Get references (Rojo structure)
-local ServerFolder = script.Parent.Parent
+-- script = ProgressionService, script.Parent = Progression, script.Parent.Parent = JoJoFramework
+local JoJoFramework = script.Parent.Parent
 local SharedFolder = ReplicatedStorage:WaitForChild("JoJoFramework"):WaitForChild("Shared")
 
-local CombatService = require(ServerFolder.Combat.CombatService)
+local CombatService = require(JoJoFramework.Combat.CombatService)
 
 local ProgressionService = {}
 ProgressionService.__index = ProgressionService

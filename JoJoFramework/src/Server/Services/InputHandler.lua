@@ -13,12 +13,13 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
 
 -- Get references (Rojo structure)
-local ServerFolder = script.Parent.Parent
+-- script = InputHandler, script.Parent = Services, script.Parent.Parent = JoJoFramework
+local JoJoFramework = script.Parent.Parent
 
-local CombatService = require(ServerFolder.Combat.CombatService)
-local StandService = require(ServerFolder.Manifestations.StandService)
-local HamonService = require(ServerFolder.Manifestations.HamonService)
-local VampireService = require(ServerFolder.Manifestations.VampireService)
+local CombatService = require(JoJoFramework.Combat.CombatService)
+local StandService = require(JoJoFramework.Manifestations.StandService)
+local HamonService = require(JoJoFramework.Manifestations.HamonService)
+local VampireService = require(JoJoFramework.Manifestations.VampireService)
 
 local InputHandler = {}
 

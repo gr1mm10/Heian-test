@@ -19,7 +19,8 @@ local ServerScriptService = game:GetService("ServerScriptService")
 local Players = game:GetService("Players")
 
 -- Get framework references
-local ServerFolder = script.Parent
+-- In Rojo: init.server.lua becomes the Script, subfolders become children of script
+local ServerFolder = script
 local SharedFolder = ReplicatedStorage:WaitForChild("JoJoFramework"):WaitForChild("Shared")
 
 print("========================================")

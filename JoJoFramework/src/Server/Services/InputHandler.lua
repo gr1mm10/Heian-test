@@ -12,10 +12,13 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
 
-local CombatService = require(script.Parent.Parent.Combat.CombatService)
-local StandService = require(script.Parent.Parent.Manifestations.StandService)
-local HamonService = require(script.Parent.Parent.Manifestations.HamonService)
-local VampireService = require(script.Parent.Parent.Manifestations.VampireService)
+-- Get references (Rojo structure)
+local ServerFolder = script.Parent.Parent
+
+local CombatService = require(ServerFolder.Combat.CombatService)
+local StandService = require(ServerFolder.Manifestations.StandService)
+local HamonService = require(ServerFolder.Manifestations.HamonService)
+local VampireService = require(ServerFolder.Manifestations.VampireService)
 
 local InputHandler = {}
 

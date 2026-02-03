@@ -21,9 +21,13 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 
-local CombatService = require(script.Parent.Parent.Combat.CombatService)
-local ManifestationConfig = require(script.Parent.Parent.Parent.Shared.Constants.ManifestationConfig)
-local CombatConfig = require(script.Parent.Parent.Parent.Shared.Constants.CombatConfig)
+-- Get references (Rojo structure)
+local ServerFolder = script.Parent.Parent
+local SharedFolder = ReplicatedStorage:WaitForChild("JoJoFramework"):WaitForChild("Shared")
+
+local CombatService = require(ServerFolder.Combat.CombatService)
+local ManifestationConfig = require(SharedFolder.Constants.ManifestationConfig)
+local CombatConfig = require(SharedFolder.Constants.CombatConfig)
 
 local StandService = {}
 StandService.__index = StandService

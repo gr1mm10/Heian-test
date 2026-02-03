@@ -15,7 +15,12 @@
 ]]
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local ServerScriptService = game:GetService("ServerScriptService")
 local Players = game:GetService("Players")
+
+-- Get framework references
+local ServerFolder = script.Parent
+local SharedFolder = ReplicatedStorage:WaitForChild("JoJoFramework"):WaitForChild("Shared")
 
 print("========================================")
 print("  JoJo Game Framework - Initializing")
@@ -25,7 +30,7 @@ print("========================================")
 -- SETUP REMOTES FIRST
 -- ============================================================================
 
-local RemoteSetup = require(script.Server.Services.RemoteSetup)
+local RemoteSetup = require(ServerFolder.Services.RemoteSetup)
 local remotesFolder = RemoteSetup.Initialize()
 
 -- ============================================================================
@@ -33,19 +38,19 @@ local remotesFolder = RemoteSetup.Initialize()
 -- ============================================================================
 
 -- Combat Service (The Sacred Foundation)
-local CombatService = require(script.Server.Combat.CombatService)
+local CombatService = require(ServerFolder.Combat.CombatService)
 CombatService.Initialize()
 
 -- Manifestation Manager (Stand, Hamon, Vampire)
-local ManifestationManager = require(script.Server.Manifestations.ManifestationManager)
+local ManifestationManager = require(ServerFolder.Manifestations.ManifestationManager)
 ManifestationManager.Initialize()
 
 -- Progression Service (No Power Creep)
-local ProgressionService = require(script.Server.Progression.ProgressionService)
+local ProgressionService = require(ServerFolder.Progression.ProgressionService)
 ProgressionService.Initialize()
 
 -- Input Handler (Client-Server Communication)
-local InputHandler = require(script.Server.Services.InputHandler)
+local InputHandler = require(ServerFolder.Services.InputHandler)
 InputHandler.Initialize(remotesFolder)
 
 -- ============================================================================

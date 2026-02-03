@@ -11,10 +11,49 @@ The game has one universal combat system. Nothing replaces it — everything bui
 
 ---
 
+## Quick Start (Rojo + VS Code)
+
+### Prerequisites
+1. Install [Rojo](https://rojo.space/) (VS Code extension + CLI)
+2. Install [Roblox Studio](https://create.roblox.com/)
+3. Install recommended VS Code extensions (prompted on open)
+
+### Setup
+
+```bash
+# 1. Open project in VS Code
+code JoJoFramework
+
+# 2. Install Rojo VS Code extension (if not already)
+# Extension ID: evaera.vscode-rojo
+
+# 3. Start Rojo server (in terminal)
+rojo serve
+
+# 4. In Roblox Studio, connect to Rojo
+# - Open the Rojo plugin
+# - Click "Connect"
+# - Changes will sync automatically!
+```
+
+### First Time Build (Alternative)
+```bash
+# Build directly to a place file
+rojo build -o JoJoGame.rbxlx
+
+# Then open JoJoGame.rbxlx in Roblox Studio
+```
+
+---
+
 ## Project Structure
 
 ```
 JoJoFramework/
+├── .vscode/                            # VS Code settings
+│   ├── settings.json                   # Lua/Roblox configuration
+│   ├── extensions.json                 # Recommended extensions
+│   └── launch.json                     # Debug configuration
 ├── src/
 │   ├── Server/
 │   │   ├── Combat/
@@ -26,25 +65,38 @@ JoJoFramework/
 │   │   │   └── ManifestationManager.lua # Stacking & interactions
 │   │   ├── Progression/
 │   │   │   └── ProgressionService.lua  # No power creep progression
-│   │   └── Services/
-│   │       ├── RemoteSetup.lua         # Network setup
-│   │       └── InputHandler.lua        # Server input validation
+│   │   ├── Services/
+│   │   │   ├── RemoteSetup.lua         # Network setup
+│   │   │   └── InputHandler.lua        # Server input validation
+│   │   └── init.server.lua             # Server entry point
 │   ├── Client/
-│   │   └── Combat/
-│   │       └── CombatController.lua    # Client input & visuals
-│   ├── Shared/
-│   │   ├── Constants/
-│   │   │   ├── CombatConfig.lua        # Combat timings & values
-│   │   │   └── ManifestationConfig.lua # Stand/Hamon/Vampire config
-│   │   ├── Modules/
-│   │   │   └── CombatPhilosophy.lua    # Design validation rules
-│   │   └── Types/
-│   │       ├── CombatTypes.lua
-│   │       └── ManifestationTypes.lua
-│   ├── init.server.lua                 # Server entry point
-│   └── init.client.lua                 # Client entry point
+│   │   ├── Combat/
+│   │   │   └── CombatController.lua    # Client input & visuals
+│   │   └── init.client.lua             # Client entry point
+│   └── Shared/
+│       ├── Constants/
+│       │   ├── CombatConfig.lua        # Combat timings & values
+│       │   └── ManifestationConfig.lua # Stand/Hamon/Vampire config
+│       ├── Modules/
+│       │   └── CombatPhilosophy.lua    # Design validation rules
+│       └── Types/
+│           ├── CombatTypes.lua
+│           └── ManifestationTypes.lua
+├── default.project.json                # Rojo project configuration
+├── selene.toml                         # Selene linter config
+├── stylua.toml                         # StyLua formatter config
+├── wally.toml                          # Wally package manager (optional)
+├── .gitignore
 └── README.md
 ```
+
+### Where Files Go in Roblox
+
+| Source Folder | Roblox Location |
+|---------------|-----------------|
+| `src/Server/` | `ServerScriptService.JoJoFramework.Server` |
+| `src/Client/` | `StarterPlayer.StarterPlayerScripts.JoJoFramework.Client` |
+| `src/Shared/` | `ReplicatedStorage.JoJoFramework.Shared` |
 
 ---
 

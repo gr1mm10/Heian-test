@@ -17,7 +17,9 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 
-local CombatConfig = require(script.Parent.Parent.Parent.Shared.Constants.CombatConfig)
+-- Get Shared folder from ReplicatedStorage (Rojo structure)
+local SharedFolder = ReplicatedStorage:WaitForChild("JoJoFramework"):WaitForChild("Shared")
+local CombatConfig = require(SharedFolder.Constants.CombatConfig)
 
 local CombatService = {}
 CombatService.__index = CombatService

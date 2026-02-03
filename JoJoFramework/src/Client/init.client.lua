@@ -14,6 +14,10 @@ local Players = game:GetService("Players")
 
 local LocalPlayer = Players.LocalPlayer
 
+-- Get framework references
+local ClientFolder = script.Parent
+local SharedFolder = ReplicatedStorage:WaitForChild("JoJoFramework"):WaitForChild("Shared")
+
 print("[JoJoClient] Initializing...")
 
 -- Wait for remotes to be created by server
@@ -27,7 +31,7 @@ end
 -- INITIALIZE CLIENT SYSTEMS
 -- ============================================================================
 
-local CombatController = require(script.Client.Combat.CombatController)
+local CombatController = require(ClientFolder.Combat.CombatController)
 CombatController.Initialize()
 
 -- ============================================================================

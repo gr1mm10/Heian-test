@@ -1,0 +1,10 @@
+# Selene linter configuration for Roblox
+std = "roblox"
+
+[config]
+# Allow unused variables with underscore prefix
+unused_variable = { allow_underscore = true }
+
+[rules]
+# Customize rules as needed
+global_usage = "allow"

@@ -1,0 +1,90 @@
+{
+    // Lua Language Server Settings (for Roblox development)
+    "Lua.runtime.version": "Luau",
+    "Lua.diagnostics.globals": [
+        "game",
+        "workspace",
+        "script",
+        "plugin",
+        "shared",
+        "warn",
+        "tick",
+        "task",
+        "typeof",
+        "spawn",
+        "delay",
+        "wait",
+        "Instance",
+        "Vector3",
+        "Vector2",
+        "CFrame",
+        "Color3",
+        "BrickColor",
+        "UDim",
+        "UDim2",
+        "Rect",
+        "Ray",
+        "Region3",
+        "Enum",
+        "Axes",
+        "Faces",
+        "TweenInfo",
+        "Random",
+        "NumberRange",
+        "NumberSequence",
+        "NumberSequenceKeypoint",
+        "ColorSequence",
+        "ColorSequenceKeypoint",
+        "PhysicalProperties",
+        "RaycastParams",
+        "OverlapParams",
+        "DockWidgetPluginGuiInfo",
+        "PathWaypoint",
+        "DateTime",
+        "os",
+        "utf8",
+        "bit32",
+        "buffer",
+        "_G",
+        "getfenv",
+        "setfenv",
+        "newproxy",
+        "elapsedTime",
+        "settings",
+        "UserSettings",
+        "version",
+        "printidentity",
+        "debug"
+    ],
+    "Lua.workspace.library": [
+        "${3rd}/luv/library"
+    ],
+    "Lua.workspace.checkThirdParty": false,
+    "Lua.telemetry.enable": false,
+
+    // File associations
+    "files.associations": {
+        "*.lua": "lua",
+        "*.luau": "lua"
+    },
+
+    // Rojo extension settings
+    "rojo.relativeRootPath": ".",
+
+    // Editor settings for Lua
+    "[lua]": {
+        "editor.defaultFormatter": "JohnnyMorganz.stylua",
+        "editor.formatOnSave": true,
+        "editor.tabSize": 4,
+        "editor.insertSpaces": true
+    },
+
+    // Exclude generated files
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/*.rbxlx.lock": true,
+        "**/*.rbxl.lock": true
+    }
+}

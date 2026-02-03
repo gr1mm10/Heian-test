@@ -1,0 +1,85 @@
+{
+  "name": "JoJoFramework",
+  "tree": {
+    "$className": "DataModel",
+
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+
+      "JoJoFramework": {
+        "$className": "Folder",
+
+        "Shared": {
+          "$path": "src/Shared"
+        }
+      }
+    },
+
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+
+      "JoJoFramework": {
+        "$className": "Folder",
+
+        "Server": {
+          "$path": "src/Server"
+        },
+
+        "Main": {
+          "$path": "src/Server/init.server.lua"
+        }
+      }
+    },
+
+    "StarterPlayer": {
+      "$className": "StarterPlayer",
+
+      "StarterPlayerScripts": {
+        "$className": "StarterPlayerScripts",
+
+        "JoJoFramework": {
+          "$className": "Folder",
+
+          "Client": {
+            "$path": "src/Client"
+          },
+
+          "Main": {
+            "$path": "src/Client/init.client.lua"
+          }
+        }
+      }
+    },
+
+    "ReplicatedFirst": {
+      "$className": "ReplicatedFirst"
+    },
+
+    "Workspace": {
+      "$className": "Workspace",
+      "$properties": {
+        "FilteringEnabled": true
+      }
+    },
+
+    "Lighting": {
+      "$className": "Lighting",
+      "$properties": {
+        "Ambient": [0.5, 0.5, 0.5],
+        "ClockTime": 14
+      }
+    },
+
+    "StarterGui": {
+      "$className": "StarterGui"
+    },
+
+    "StarterPack": {
+      "$className": "StarterPack"
+    },
+
+    "SoundService": {
+      "$className": "SoundService"
+    }
+  }
+}
